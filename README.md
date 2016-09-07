@@ -2,4 +2,4 @@
 
 USC CSCI 526 Project 
 
-Author
+Author Jia
