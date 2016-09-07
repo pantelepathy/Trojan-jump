@@ -1,7 +1,7 @@
 # Trojan-jump
 
-USC CSCI 526 Project 
+USC CSCI 526 Project-Game 
 
-Author Jia Shi
+Author May Shi
 Author Lidnsay
 
