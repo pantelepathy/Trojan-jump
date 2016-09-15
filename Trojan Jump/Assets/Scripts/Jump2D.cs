@@ -17,7 +17,9 @@ public class Jump2D : MonoBehaviour {
 	{
 		grounded = Physics2D.OverlapCircle (groundcheck.position, groundRadius, ground);
 
-		if (grounded) 
+		float velY = GetComponent<Rigidbody2D>().velocity.y;
+
+		if (grounded && velY <= 0) 
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2 (0, 0);
 			GetComponent<Rigidbody2D>().AddForce (new Vector2 (0, jumpHeight));

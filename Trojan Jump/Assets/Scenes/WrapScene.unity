@@ -90,6 +90,48 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &135120433
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000010825953302, guid: f0c75275902fc40e1a302e1d1c44b1a5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.4505043
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010825953302, guid: f0c75275902fc40e1a302e1d1c44b1a5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010825953302, guid: f0c75275902fc40e1a302e1d1c44b1a5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010825953302, guid: f0c75275902fc40e1a302e1d1c44b1a5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010825953302, guid: f0c75275902fc40e1a302e1d1c44b1a5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010825953302, guid: f0c75275902fc40e1a302e1d1c44b1a5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010825953302, guid: f0c75275902fc40e1a302e1d1c44b1a5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010825953302, guid: f0c75275902fc40e1a302e1d1c44b1a5, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f0c75275902fc40e1a302e1d1c44b1a5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1341854952
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +160,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1861820497}
   m_RootOrder: 0
+--- !u!1001 &1660270867
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000010953646378, guid: 26154cb0d093e4123b700fb25cf6bacf, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010953646378, guid: 26154cb0d093e4123b700fb25cf6bacf, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010953646378, guid: 26154cb0d093e4123b700fb25cf6bacf, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010953646378, guid: 26154cb0d093e4123b700fb25cf6bacf, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010953646378, guid: 26154cb0d093e4123b700fb25cf6bacf, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010953646378, guid: 26154cb0d093e4123b700fb25cf6bacf, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010953646378, guid: 26154cb0d093e4123b700fb25cf6bacf, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010953646378, guid: 26154cb0d093e4123b700fb25cf6bacf, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 26154cb0d093e4123b700fb25cf6bacf, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1662012451
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +380,7 @@ GameObject:
   - 114: {fileID: 1861820493}
   - 114: {fileID: 1861820498}
   - 114: {fileID: 1861820499}
+  - 114: {fileID: 1861820500}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -421,4 +506,16 @@ MonoBehaviour:
   groundRadius: 0.025
   ground:
     serializedVersion: 2
-    m_Bits: 4294966783
+    m_Bits: 4294965759
+--- !u!114 &1861820500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1861820492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8765ad36ce0bb4dd5a01ad9437d61dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpHeight: 400
