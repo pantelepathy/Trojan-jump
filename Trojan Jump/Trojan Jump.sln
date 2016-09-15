@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{F07349AA-67A5-9E9D-A91A-651C4D720E5E}") = "Trojan Jump", "Assembly-CSharp.csproj", "{CB0CE3CE-BB1E-092B-F8F6-AB36036DDE83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB0CE3CE-BB1E-092B-F8F6-AB36036DDE83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB0CE3CE-BB1E-092B-F8F6-AB36036DDE83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB0CE3CE-BB1E-092B-F8F6-AB36036DDE83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB0CE3CE-BB1E-092B-F8F6-AB36036DDE83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
