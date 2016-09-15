@@ -1,6 +1,5 @@
 
 # Trojan-jump
 
-USC CSCI 526 Project 
-
-Author: Jia, Jinfeng
+USC CSCI 526 Project-Game 
+Author: Jia, Jinfeng,Lindsay
