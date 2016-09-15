@@ -1,6 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/JumpPlat2D.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Wrap2D.cs" Line="15" Column="40" />
+      <File FileName="Assets/Scripts/LeftRight2D.cs" Line="18" Column="35" />
+      <File FileName="Assets/Scripts/Jump2D.cs" Line="24" Column="32" />
+      <File FileName="Assets/Scripts/JumpPlat2D.cs" Line="18" Column="31" />
+      <File FileName="Assets/Scripts/UpDown2D.cs" Line="32" Column="27" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

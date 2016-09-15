@@ -46,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Jump2D.cs" />
+     <Compile Include="Assets\Scripts\JumpPlat2D.cs" />
+     <Compile Include="Assets\Scripts\LeftRight2D.cs" />
      <Compile Include="Assets\Scripts\Movement2D.cs" />
+     <Compile Include="Assets\Scripts\UpDown2D.cs" />
      <Compile Include="Assets\Scripts\Wrap2D.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
