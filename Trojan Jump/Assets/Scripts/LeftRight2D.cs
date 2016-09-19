@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LeftRight2D : MonoBehaviour {
 
-	float platformSpeed = 2f;
+	float platformSpeed = 1.2f;
 	bool endPoint;
 	
 	// Update is called once per frame

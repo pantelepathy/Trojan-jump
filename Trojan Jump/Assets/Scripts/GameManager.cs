@@ -16,38 +16,86 @@ public class GameManager : MonoBehaviour {
 	private float platCheck;
 	private float spawnPlatformsTo = 1.5f;
 
+	public GameObject playBotton;
+	GameObject playerTrojan;
+
+	public enum GameManagerState {
+		Opening,
+		GamePlay,
+		GameOver,
+	}
+
+	private GameManagerState GMState;
+
 	// Use this for initialization
 	void Start () {
+
+		playerTrojan = GameObject.FindGameObjectWithTag ("Player");
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
 
-//		PlatformSpawner (1.5f);
+		GMState = GameManagerState.Opening;
+
+		SetGameManagerState (GMState);
+	}
+
+	void UpdateGameManagerState () {
+		switch (GMState) {
+
+		case GameManagerState.Opening:
+			playerTrojan.SetActive (false);
+			break;
+
+		case GameManagerState.GamePlay:
+			playerTrojan.SetActive (true);
+			playBotton.SetActive (false);
+			break;
+
+		case GameManagerState.GameOver:
+			playerTrojan.SetActive (false);
+			break;
+
+		}
+	}
+
+
+	public void SetGameManagerState(GameManagerState state){
+		GMState = state;
+		UpdateGameManagerState ();
+	}
+
+
+	public void StartGamePlay(){
+		GMState = GameManagerState.GamePlay;
+		UpdateGameManagerState ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		playerHeightY = player.position.y;
+		if (GMState == GameManagerState.GamePlay) {
+			playerHeightY = player.position.y;
 
-		if (playerHeightY > platCheck) {
-			platformManager ();
-		}
-
-		float currentCameraHeight = transform.position.y;
-
-		float newHeightOfCamera = Mathf.Lerp (currentCameraHeight, playerHeightY, Time.deltaTime * 10);
-
-		if (playerHeightY > currentCameraHeight) {
-			transform.position = new Vector3 (transform.position.x, newHeightOfCamera, transform.position.z);
-		} else {
-			if (playerHeightY < (currentCameraHeight - 4.4f)) {
-
-				OnGUI2D.OG2D.CheckHighScore ();
-				Application.LoadLevel (Application.loadedLevel);
+			if (playerHeightY > platCheck) {
+				platformManager ();
 			}
-		}
 
-		if (playerHeightY > OnGUI2D.score) {
-			OnGUI2D.score = (int)playerHeightY;
+			float currentCameraHeight = transform.position.y;
+
+			float newHeightOfCamera = Mathf.Lerp (currentCameraHeight, playerHeightY, Time.deltaTime * 10);
+
+			if (playerHeightY > currentCameraHeight) {
+				transform.position = new Vector3 (transform.position.x, newHeightOfCamera, transform.position.z);
+			} else {
+				if (playerHeightY < (currentCameraHeight - 4.4f)) {
+
+					OnGUI2D.OG2D.CheckHighScore ();
+					Application.LoadLevel (Application.loadedLevel);
+				}
+			}
+
+			if (playerHeightY > OnGUI2D.score) {
+				OnGUI2D.score = (int)playerHeightY;
+			}
 		}
 	}
 

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class UpDown2D : MonoBehaviour {
 
-	float platformSpeed = 2f;
+	float platformSpeed = 1f;
 	bool endPoint;
 
 	float startPoint;
