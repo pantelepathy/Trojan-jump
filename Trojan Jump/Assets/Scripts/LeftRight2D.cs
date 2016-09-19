@@ -15,10 +15,10 @@ public class LeftRight2D : MonoBehaviour {
 			transform.position -= Vector3.right * platformSpeed * Time.deltaTime;
 		}
 
-		if (transform.position.x >= 3.28) {
+		if (transform.position.x >= 2.33) {
 			endPoint = false ;
 		}
-		if (transform.position.x <= -3.28) {
+		if (transform.position.x <= -2.33) {
 			endPoint = true;
 		}
 	}

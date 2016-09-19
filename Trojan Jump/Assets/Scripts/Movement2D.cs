@@ -8,7 +8,8 @@ public class Movement2D : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		float h = Input.GetAxis ("Horizontal");
+		 //float h = Input.GetAxis ("Horizontal");
+		float h = Input.acceleration.x;
 		GetComponent<Rigidbody2D>().velocity = new Vector2 (h * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 	}
 }
