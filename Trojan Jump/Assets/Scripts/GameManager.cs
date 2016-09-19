@@ -62,24 +62,33 @@ public class GameManager : MonoBehaviour {
 
 		while (y <= floatValue) {
 			float x = Random.Range (-2.33f, 2.33f);
-
-			platNumber = Random.Range (1, 5);
+			int currentScore = OnGUI2D.score;
+			platNumber = 0;
+			if ( currentScore < 5) {
+				platNumber = 4;
+			} else if (currentScore < 30) {
+				platNumber = Random.Range (1,20);
+			} else {
+				platNumber = Random.Range (1,7);
+			}
 
 			Vector2 posXY = new Vector2 (x,y);
-			if (platNumber == 1) {
+			if (platNumber >= 4) {
 				Instantiate (regular, posXY, Quaternion.identity);
-			}
-			if (platNumber == 2) {
-				Instantiate (jump, posXY, Quaternion.identity);
-			}
-			if (platNumber == 3) {
-				Instantiate (LeftRight, posXY, Quaternion.identity);
-			}
-			if (platNumber == 4) {
-				Instantiate (UpDown, posXY, Quaternion.identity);
+				y += Random.Range (.5f, 0.7f);
+			} else {
+				if (platNumber == 3) {
+					Instantiate (jump, posXY, Quaternion.identity);
+				}
+				if (platNumber == 2) {
+					Instantiate (LeftRight, posXY, Quaternion.identity);
+				}
+				if (platNumber == 1) {
+					Instantiate (UpDown, posXY, Quaternion.identity);
+				}
+				y += Random.Range (.5f, 1.75f);
 			}
 
-			y += Random.Range (.5f, 1.75f);
 			Debug.Log ("Spawned Platform");
 		}
 		spawnPlatformsTo = floatValue;
