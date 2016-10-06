@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AccelerometerInput2D.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameScore.cs" />
      <Compile Include="Assets\Scripts\Jump2D.cs" />
      <Compile Include="Assets\Scripts\JumpPlat2D.cs" />
      <Compile Include="Assets\Scripts\LeftRight2D.cs" />

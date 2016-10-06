@@ -1,11 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/OnGUI2D.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Movement2D.cs">
     <Files>
-      <File FileName="Assets/Scripts/OnGUI2D.cs" Line="20" Column="31" />
+      <File FileName="Assets/Scripts/Movement2D.cs" Line="12" Column="34" />
+      <File FileName="Assets/Scripts/UpDown2D.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Jump2D.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/JumpPlat2D.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LeftRight2D.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameScore.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/OnGUI2D.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Movement2D.cs" Line="11" Column="45" />
-      <File FileName="Assets/Scripts/AccelerometerInput2D.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

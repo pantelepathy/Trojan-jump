@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour {
 	private float spawnPlatformsTo = 1.5f;
 
 	public GameObject playBotton;
+	public GameObject exitButton;
+	public GameObject gameOverGo;
+	public GameObject scoreBoard;
+	public GameObject scoreUITextGo;
+	public GameObject highscoreUITextGo;
 	GameObject playerTrojan;
 
 	public enum GameManagerState {
@@ -32,28 +37,48 @@ public class GameManager : MonoBehaviour {
 
 		playerTrojan = GameObject.FindGameObjectWithTag ("Player");
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
-
+		scoreUITextGo = GameObject.FindGameObjectWithTag ("ScoreTextTag");
+		highscoreUITextGo = GameObject.FindGameObjectWithTag ("HighScoreTextTag");
 		GMState = GameManagerState.Opening;
 
 		SetGameManagerState (GMState);
 	}
+
+	void Restart() {
+		Application.LoadLevel (Application.loadedLevel);
+	}
+	/// <summary>
+	///  ADD
+	/// </summary>
 
 	void UpdateGameManagerState () {
 		switch (GMState) {
 
 		case GameManagerState.Opening:
 			playerTrojan.SetActive (false);
+			gameOverGo.SetActive (false);
+			scoreBoard.SetActive (false);
 			break;
 
 		case GameManagerState.GamePlay:
 			playerTrojan.SetActive (true);
 			playBotton.SetActive (false);
+			exitButton.SetActive (false);
 			break;
 
 		case GameManagerState.GameOver:
+			gameOverGo.SetActive (true);
+			scoreBoard.SetActive (true);
 			playerTrojan.SetActive (false);
-			break;
+			if (OnGUI2D.score * 15 > OnGUI2D.highScore) {
+				highscoreUITextGo.GetComponent<GameScore> ().Score = OnGUI2D.score * 15; 
+			} else {
+				highscoreUITextGo.GetComponent<GameScore> ().Score = OnGUI2D.highScore;
+			}
+			scoreUITextGo.GetComponent<GameScore> ().Score = OnGUI2D.score*15;
 
+			Invoke ("Restart", 3f);
+			break;
 		}
 	}
 
@@ -68,10 +93,30 @@ public class GameManager : MonoBehaviour {
 		GMState = GameManagerState.GamePlay;
 		UpdateGameManagerState ();
 	}
-	
+	public void ExitGame(){
+		Application.Quit ();
+	}
+	public static void SetHeight(GameObject gameObject, float height)
+	{
+		gameObject.transform.position = new Vector3 (gameObject.transform.position.x, height,gameObject.transform.position.z);
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
+		RaycastHit hit = new RaycastHit();
+
+		for (int i = 0; i < Input.touchCount; i++) {
+			if (Input.GetTouch(i).phase.Equals(TouchPhase.Began)) {
+				// Construct a ray from the current touch coordinates
+				Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+				if (Physics.Raycast(ray, out hit)) {
+					hit.transform.gameObject.SendMessage("OnMouseDown");
+					StartGamePlay ();
+				}
+			}
+		}
+
 		if (GMState == GameManagerState.GamePlay) {
 			playerHeightY = player.position.y;
 
@@ -89,7 +134,10 @@ public class GameManager : MonoBehaviour {
 				if (playerHeightY < (currentCameraHeight - 4.4f)) {
 
 					OnGUI2D.OG2D.CheckHighScore ();
-					Application.LoadLevel (Application.loadedLevel);
+					//set to game over
+					GMState = GameManagerState.GameOver;
+					SetHeight(gameOverGo,currentCameraHeight );
+					SetGameManagerState (GMState);
 				}
 			}
 
